@@ -1,0 +1,88 @@
+Question 1: SQL nima? [ ] Strukturaviy Sifatlar Loyihasi [ ] Ma'lumotlar bazasini boshqarish tizimi [CORRECT] Strukturaviy So'rovlar Tili [ ] Ma'lumotlarni saqlash formati
+Question 2: SQL qaysi turdagi bazalarda ishlatiladi? [ ] NoSQL [ ] Fayl tizimlari [CORRECT] Relyatsion ma'lumotlar bazasi [ ] Yodda saqlanadigan ma'lumotlar bazasi
+Question 3: SQLda qaysi operator ma'lumotlarni kiritish uchun ishlatiladi? [CORRECT] INSERT [ ] UPDATE [ ] DELETE [ ] SELECT
+Question 4: SQLda ma'lumotlarni tanlash uchun qaysi operator ishlatiladi? [ ] DELETE [ ] INSERT [ ] UPDATE [CORRECT] SELECT
+Question 5: SQLda ma'lumotlarni o'zgartirish uchun qaysi operator ishlatiladi? [ ] DELETE [ ] INSERT [CORRECT] UPDATE [ ] SELECT
+Question 6: MySQL nima? [ ] Dasturlash tili [ ] Fayl tizimi [CORRECT] Relyatsion ma'lumotlar bazasi boshqarish tizimi [ ] Brauzer
+Question 7: Qaysi buyruq yordamida yangi ma'lumotlar bazasi yaratiladi? [ ] CREATE TABLE [CORRECT] CREATE DATABASE [ ] CREATE VIEW [ ] CREATE INDEX
+Question 8: MySQLda mavjud ma'lumotlar bazalarini ko'rish uchun qaysi buyruq ishlatiladi? [ ] SHOW TABLES [ ] SHOW INDEXES [CORRECT] SHOW DATABASES [ ] SHOW VIEWS
+Question 9: Yangi jadval yaratish uchun qaysi buyruq ishlatiladi? [CORRECT] CREATE TABLE [ ] CREATE DATABASE [ ] CREATE INDEX [ ] CREATE VIEW
+Question 10: MySQLda jadval nima? [ ] Fayl [ ] Ma'lumotlarni saqlash joyi [ ] Ma'lumotlar bazasi [CORRECT] Ma'lumotlar tuzilmasi
+Question 11: Jadvallarning tuzilmasini ko'rish uchun qaysi buyruq ishlatiladi? [CORRECT] DESCRIBE TABLE [ ] SHOW TABLES [ ] DESCRIBE DATABASE [ ] SHOW COLUMNS
+Question 12: Jadvallarni ko'rish uchun qaysi buyruq ishlatiladi? [ ] LIST TABLES [ ] DISPLAY TABLES [CORRECT] SHOW TABLES [ ] VIEW TABLES
+Question 13: MySQLda qaysi ma'lumot turi butun sonlarni saqlaydi? [ ] VARCHAR [ ] DATE [CORRECT] INT [ ] TEXT
+Question 14: Qaysi ma'lumot turi matnni saqlash uchun ishlatiladi? [ ] INT [ ] DATE [ ] FLOAT [CORRECT] VARCHAR
+Question 15: MySQLda sanalarni saqlash uchun qaysi ma'lumot turi ishlatiladi? [CORRECT] DATETIME [ ] VARCHAR [ ] INT [ ] FLOAT
+Question 16: Katta hajmdagi matnni saqlash uchun qaysi ma'lumot turi ishlatiladi? [ ] VARCHAR [CORRECT] TEXT [ ] CHAR [ ] DATE
+Question 17: Qaysi operator yordamida ma'lumotlarni tanlash mumkin? [ ] INSERT [CORRECT] SELECT [ ] UPDATE [ ] DELETE
+Question 18: SELECT bayonotida ustunlarga nom berish uchun qaysi kalit so'z ishlatiladi? [CORRECT] AS [ ] LIKE [ ] ALIAS [ ] IS
+Question 19: Qaysi operator yordamida barcha ustunlar tanlanadi? [ ] ALL [CORRECT] '*' [ ] % [ ] ANY
+Question 20: Qaysi kalit so'z ustunning qiymati bo'sh bo'lmaganligini tekshiradi? [ ] NULL [CORRECT] NOT NULL [ ] UNIQUE [ ] PRIMARY
+Question 21: Qaysi kalit so'z yordamida ma'lumotlar filtrlanadi? [ ] FILTER [CORRECT] WHERE [ ] ORDER BY [ ] SELECT
+Question 22: WHERE bayonotida qaysi operator yordamida bir nechta shartlar qo'shiladi? [CORRECT] AND [ ] OR [ ] NOT [ ] BOTH
+Question 23: Qaysi kalit so'z yordamida natijalar tartiblanadi? [ ] SORT BY [ ] GROUP BY [CORRECT] ORDER BY [ ] ARRANGE BY
+Question 24: ORDER BY bayonotida qaysi kalit so'z yordamida teskari tartibi belgilanadi? [ ] ASC [CORRECT] DESC [ ] DOWN [ ] DECREASE
+Question 25: ORDER BY bayonotida qaysi kalit so'z yordamida o'sish tartibi belgilanadi? [CORRECT] ASC [ ] DESC [ ] UP [ ] INCREASE
+Question 26: INSERT INTO qachon ishlatiladi? [ ] Ma'lumotlarni yangilash uchun [CORRECT] Ma'lumotlarni kiritish uchun [ ] Ma'lumotlarni o'chirish uchun [ ] Ma'lumotlarni ko'rish uchun
+Question 27: UPDATE buyrug'i nima qiladi? [ ] Yangi jadval yaratadi [CORRECT] Ma'lumotlarni yangilaydi [ ] Ma'lumotlarni o'chiradi [ ] Ma'lumotlarni qo'shadi
+Question 28: DELETE buyrug'i nima qiladi? [ ] Jadval yaratadi [ ] Ma'lumotlarni qo'shadi [ ] Ma'lumotlarni yangilaydi [CORRECT] Ma'lumotlarni o'chiradi
+Question 29: MySQLda avto_increment qaysi ma'lumot turida ishlatiladi? [ ] CHAR [ ] VARCHAR [CORRECT] INT [ ] DATE
+Question 30: AUTO_INCREMENT nima uchun ishlatiladi? [ ] Ma'lumotlarni kiritish [ ] Yangi qiymat yaratish [CORRECT] Avtomatik ravishda qiymatni oshirish [ ] Ma'lumotlarni o'chirish
+Question 31: Ma'lumotlarni yangilashda qaysi kalit so'z ishlatiladi? [ ] INSERT [ ] SELECT [CORRECT] UPDATE [ ] DELETE
+Question 32: MySQLda primary key nima? [ ] Unikal ma'lumotlar [ ] Takrorlanadigan qiymatlar [CORRECT] Jadvaldagi asosiy kalit ustun [ ] Qo'shimcha ustun
+Question 33: Primary key qaysi xususiyatga ega bo'lishi kerak? [ ] NULL qiymatga ega bo'lishi mumkin [ ] To'g'ri javob yo'q [ ] Takrorlanishi mumkin [CORRECT] Unikal bo'lishi kerak
+Question 34: Foreign key nima? [ ] Asosiy ustun [ ] Unikal ustun [CORRECT] Boshqa jadvaldagi ustunga ishora qiluvchi ustun [ ] Qo'shimcha ustun
+Question 35: Foreign key qaysi ma'lumotlar uchun ishlatiladi? [ ] Unikal ma'lumotlar [CORRECT] Boshqa jadval bilan bog'langan ma'lumotlar [ ] Takrorlanadigan ma'lumotlar [ ] Barcha ma'lumotlar
+Question 36: AUTO_INCREMENT qaysi kalit so'z bilan ishlatiladi? [CORRECT] PRIMARY [ ] FOREIGN [ ] UNIQUE [ ] AUTO
+Question 37: MySQLda INNER JOIN nima uchun ishlatiladi? [ ] Ma'lumotlarni qo'shish uchun [ ] Jadval yaratish uchun [CORRECT] Ikki yoki undan ortiq jadvalni bog'lash uchun [ ] Ma'lumotlarni o'chirish uchun
+Question 38: LEFT JOIN qachon ishlatiladi? [ ] Faqat chap jadvaldagi ma'lumotlarni tanlash uchun [ ] Faqat o'ng jadvaldagi ma'lumotlarni tanlash uchun [CORRECT] Chap jadval va umumiy ma'lumotlarni tanlash uchun [ ] Faqat umumiy ma'lumotlarni tanlash uchun
+Question 39: RIGHT JOIN qachon ishlatiladi? [ ] Faqat chap jadvaldagi ma'lumotlarni tanlash uchun [ ] Faqat o'ng jadvaldagi ma'lumotlarni tanlash uchun [CORRECT] O'ng jadval va umumiy ma'lumotlarni tanlash uchun [ ] Faqat umumiy ma'lumotlarni tanlash uchun
+Question 40: MySQLda JOIN qachon ishlatiladi? [ ] Faqat bitta jadvaldagi ma'lumotlarni ko'rsatish uchun [CORRECT] Ikki yoki undan ortiq jadvalni bog'lash uchun [ ] Jadval yaratish uchun [ ] Ma'lumotlarni o'chirish uchun
+Question 41: SQL - bu ? [ ] Dasturlash tili [CORRECT] Structured Query Language [ ] Ma'lumotlar bazasi [ ] To'g'ri javob yo'q
+Question 42: Subqueryning asosiy maqsadi nima? [ ] Ma'lumotlarni o'chirish [ ] Ma'lumotlarni kiritish [CORRECT] Murakkab so'rovlar yozish [ ] Jadval yaratish
+Question 43: MySQLda indeks qanday yaratiladi? [CORRECT] CREATE INDEX [ ] CREATE TABLE [ ] CREATE DATABASE [ ] CREATE VIEW
+Question 44: Indeks qaysi kalit so'z bilan o'chiriladi? [CORRECT] DROP INDEX [ ] DELETE INDEX [ ] REMOVE INDEX [ ] ERASE INDEX
+Question 45: Indeks qaysi holatda samarali ishlaydi? [CORRECT] Katta hajmdagi ma'lumotlar bilan ishlashda [ ] Kichik hajmdagi ma'lumotlar bilan ishlashda [ ] Faqat matnli ma'lumotlar bilan ishlashda [ ] Faqat sanali ma'lumotlar bilan ishlashda
+Question 46: View nima? [ ] Asosiy jadval [CORRECT] Ma'lumotlarni ko'rsatish uchun yaratilgan virtual jadval [ ] Ma'lumotlarni o'chirish uchun [ ] Ma'lumotlarni kiritish uchun
+Question 47: Qanday qilib view yaratiladi? [CORRECT] CREATE VIEW [ ] CREATE TABLE [ ] CREATE DATABASE [ ] CREATE INDEX
+Question 48: View qaysi holatda ishlatiladi? [ ] Ma'lumotlarni kiritish uchun [ ] Ma'lumotlarni yangilash uchun [CORRECT] Murakkab so'rovlarni soddalashtirish uchun [ ] Ma'lumotlarni o'chirish uchun
+Question 49: Qaysi buyruq yordamida view o'chiriladi? [CORRECT] DROP VIEW [ ] DELETE VIEW [ ] REMOVE VIEW [ ] ERASE VIEW
+Question 50: Qaysi kalit so'z yordamida jadvalga yangi ustun qo'shish mumkin? [CORRECT] ADD COLUMN [ ] NEW COLUMN [ ] CREATE COLUMN [ ] INSERT COLUMN
+Question 51: Qaysi operator yordamida jadvaldan ustun o'chiriladi? [ ] REMOVE COLUMN [ ] DELETE COLUMN [CORRECT] DROP COLUMN [ ] ERASE COLUMN
+Question 52: Qaysi operator yordamida jadvaldagi ustun nomi o'zgartiriladi? [CORRECT] RENAME COLUMN [ ] CHANGE COLUMN [ ] ALTER COLUMN [ ] MODIFY COLUMN
+Question 53: Qaysi operator yordamida jadval butunlay o'chiriladi? [ ] DELETE TABLE [ ] REMOVE TABLE [ ] TRUNCATE TABLE [CORRECT] DROP TABLE
+Question 54: Qaysi operator yordamida jadvaldagi ma'lumotlarni ko'rish mumkin? [CORRECT] SELECT [ ] SHOW [ ] DISPLAY [ ] VIEW
+Question 55: Qaysi kalit so'z yordamida qatorlar soni aniqlanadi? [CORRECT] COUNT [ ] SUM [ ] AVG [ ] TOTAL
+Question 56: Qaysi kalit so'z yordamida jadvaldagi ustunlar orasida noyob qiymatlar tanlanadi? [CORRECT] DISTINCT [ ] UNIQUE [ ] DIFFERENT [ ] EXCLUSIVE
+Question 57: Qaysi kalit so'z yordamida qiymatlarni ma'lum diapazonda tanlash mumkin? [CORRECT] BETWEEN [ ] RANGE [ ] LIMIT [ ] WITHIN
+Question 58: Qaysi operator yordamida sonlarning yig'indisini hisoblash mumkin? [ ] COUNT [CORRECT] SUM [ ] TOTAL [ ] ADD
+Question 59: Qaysi operator yordamida eng katta qiymatni tanlash mumkin? [CORRECT] MAX [ ] TOP [ ] HIGH [ ] LARGE
+Question 60: Qaysi operator yordamida eng kichik qiymatni tanlash mumkin? [CORRECT] MIN [ ] LOW [ ] SMALL [ ] LEAST
+Question 61: Qaysi operator yordamida o'rtacha qiymatni hisoblash mumkin? [ ] AVERAGE [ ] MEAN [ ] MEDIAN [CORRECT] AVG
+Question 62: Qaysi kalit so'z yordamida ma'lumotlarni guruhlash mumkin? [CORRECT] GROUP BY [ ] CLUSTER [ ] BUNDLE [ ] ORDER BY
+Question 63: Qaysi kalit so'z yordamida ma'lumotlarni filtrlagan holda guruhlash mumkin? [CORRECT] HAVING [ ] WHERE [ ] FILTER [ ] QUALIFY
+Question 64: Qaysi kalit so'z yordamida ma'lumotlarni soni bo'yicha cheklash mumkin? [CORRECT] LIMIT [ ] RESTRICT [ ] CONSTRAIN [ ] REDUCE
+Question 65: Ushbu SQL so'rov qanday ish bajaradi: CREATE DATABASE IF NOT EXISTS bank; [ ] Jadval yaratadi [ ] Jadvalni o'chiradi [CORRECT] ma'lumotlar bazasi yaratadi [ ] ma'lumotlar bazasini o'chiradi
+Question 66: Ushbu SQL so'rov qanday ish bajaradi: DROP TABLE IF EXISTS accounts; [ ] accounts nomli bazani o'chiradi [CORRECT] accounts nomli jadvalni o'chiradi [ ] accounts nomli viewni o'chiradi [ ] accounts nomli bazani bog'laydi
+Question 67: Ushbu SQL so'rov qanday ish bajaradi: CREATE TABLE accounts ( account_id INT AUTO_INCREMENT PRIMARY KEY, ismi VARCHAR(100), balans DECIMAL(10, 2)); [ ] accounts nomli bazani yaratadi [CORRECT] accounts nomli jadvalni yaratadi [ ] accounts nomli viewni yaratadi [ ] To'g'ri javob yo'q
+Question 68: Ushbu yaratilayotgan jadvalda nechta ustun bor: CREATE TABLE accounts ( account_id INT AUTO_INCREMENT PRIMARY KEY, ismi VARCHAR(100), balans DECIMAL(10, 3)); [ ] 2 ta [ ] 1 ta [ ] 4 ta [CORRECT] 3 ta
+Question 69: Ushbu SQL so'rov jadvalda nechta yangi qator yaratadi : INSERT INTO accounts (ismi, balans) VALUES('Ali', 1000.00), ('Vali', 850.00), ('Sami', 720.00), ('Kamol', 930.00),('Dilshod', 1500.00), ('Zarina', 1200.00), ('Gulbahor', 670.00), ('Otabek', 890.00),('Shahnoza', 760.00); [CORRECT] 9 ta [ ] 6 ta [ ] 3 ta [ ] 2 ta
+Question 70: Ushbu SQL so'rov jadvalda nechta yangi qator yaratadi : INSERT INTO accounts (ismi, balans) VALUES('Iroda', 570.00), ('Tohir', 1100.00),('Lola', 950.00), ('Sardor', 1020.00), ('Madina', 800.00), ('Bobur', 1150.00); [ ] 9 ta [CORRECT] 6 ta [ ] 3 ta [ ] 2 ta
+Question 71: Ushbu SQL so'rov qanday ish bajaradi: UPDATE accounts SET balans = balans - 100 WHERE ismi = 'Ali'; [ ] jadvaldagi barcha ma'lumotlarni yangilaydi [CORRECT] jadvaldagi berilgan shart bo'yicha ma'lumotlarni yangilaydi [ ] jadvaldagi ustunni o'chiradi [ ] jadvaldagi qatorni o'chiradi
+Question 72: Ushbu SQL so'rov qanday ish bajaradi: CREATE UNIQUE INDEX idx_email ON users(email); [CORRECT] index yaratadi [ ] view yaratadi [ ] trigger yaratadi [ ] To'g'ri javob yo'q
+Question 73: Ushbu SQL so'rovdan jadval nomini ko'rsating : CREATE UNIQUE INDEX idx_email ON users(email); [ ] email [ ] idx_email [CORRECT] users [ ] To'g'ri javob yo'q
+Question 74: Ushbu SQL so'rovdan index nomini ko'rsating : CREATE UNIQUE INDEX idx_email ON users(email); [ ] email [CORRECT] idx_email [ ] users [ ] To'g'ri javob yo'q
+Question 75: Ushbu SQL so'rovdan index yaratilayotgan ustun nomini ko'rsating: CREATE UNIQUE INDEX idx_email ON users(email); [CORRECT] email [ ] idx_email [ ] users [ ] To'g'ri javob yo'q
+Question 76: Ushbu SQL so'rov qanday ish bajaradi: CREATE VIEW employee_view ASSELECT employee_id, first_name, last_name, department_idFROM employees; [ ] index yaratadi [CORRECT] view yaratadi [ ] trigger yaratadi [ ] To'g'ri javob yo'q
+Question 77: Ushbu SQL so'rovdagi ma'lumotlar qayerdan olinyapti: SELECT * FROM employee_viewWHERE department_id = 5; [ ] virtual bazadan [ ] protseduradan [ ] o'chirilgan jadvaldan [CORRECT] virtual jadvaldan
+Question 78: Yaratilayotgan jadvalda nechta ustun bor: CREATE TABLE courses ( CourseID int(11) NOT NULL, CourseName varchar(100) DEFAULT NULL, Instructor varchar(100) DEFAULT NULL, PRIMARY KEY (CourseID)); [ ] 2 ta [ ] 1 ta [CORRECT] 3 ta [ ] 4 ta
+Question 79: Ushbu SQL so'rov jadvalga nechta qator qo'shadi: INSERT INTO courses VALUES (1,'Matematika','Abdulla Qodirov'),(2,'Fizika','Dilshod Bek'); [CORRECT] 2 ta [ ] 1 ta [ ] 3 ta [ ] 4 ta
+Question 80: Ushbu SQL so'rov jadvalga nechta qator qo'shadi: INSERT INTO employees VALUES (1,'Javlon','Ismoilov',1),(2,'Madina','Abdusamatova',2),(3,'Kamol','Aliyev',NULL); [ ] 2 ta [ ] 1 ta [CORRECT] 3 ta [ ] 4 ta
+Question 81: Ushbu SQL so'rovi qanday ish bajaradi: DROP TABLE IF EXISTS orders; [ ] Jadvalni ko'rsatadi [ ] Jadvaldagi ma'lumotlarni chiqaradi [ ] Jadvaldagi ustunni o'chiradi [CORRECT] Jadvalni o'chiradi
+Question 82: Ushbu SQL so'rovi qanday ish bajaradi: DROP TABLE IF EXISTS products; [ ] Jadvalni ko'rsatadi [ ] Jadvaldagi ma'lumotlarni chiqaradi [ ] Jadvaldagi ustunni o'chiradi [CORRECT] Jadvalni o'chiradi
+Question 83: Ushbu SQL so'rovi qanday ish bajaradi: DROP TABLE IF EXISTS students; [CORRECT] Jadvalni o'chiradi [ ] Jadvalni ko'rsatadi [ ] Jadvaldagi ma'lumotlarni chiqaradi [ ] Jadvaldagi ustunni o'chiradi
+Question 84: Yaratilayotgan jadvalda nechta ustun bor: CREATE TABLE IF NOT EXISTS futbolchilar ( futbolchi_id INT AUTO_INCREMENT PRIMARY KEY, futbolchi_ismi VARCHAR(100), oylik_maoshi DECIMAL(10,2), yillik_maoshi DECIMAL(10,2)); [ ] 2 ta [ ] 1 ta [ ] 3 ta [CORRECT] 4 ta
+Question 85: Ushbu SQL so'rov nima ish bajaradi: DELIMITER //CREATE TRIGGER after_insert_playerAFTER INSERT ON futbolchilarFOR EACH ROWBEGIN UPDATE futbolchilar SET yillik_maoshi = NEW.oylik_maoshi * 12 WHERE futbolchi_id = NEW.futbolchi_id;END;//DELIMITER ; [ ] index yaratadi [ ] view yaratadi [CORRECT] trigger yaratadi [ ] To'g'ri javob yo'q
+Question 86: Ushbu SQL so'rov nima ish bajaradi: DELIMITER //CREATE TRIGGER after_update_playerAFTER UPDATE ON futbolchilarFOR EACH ROWBEGIN IF OLD.oylik_maoshi != NEW.oylik_maoshi THEN UPDATE futbolchilar SET yillik_maoshi = NEW.oylik_maoshi * 12 WHERE futbolchi_id = NEW.futbolchi_id; END IF;END;//DELIMITER ; [ ] index yaratadi [ ] view yaratadi [CORRECT] trigger yaratadi [ ] To'g'ri javob yo'q
+Question 87: Ushbu SQL so'rov qanday ish bajaradi: SELECT * FROM students WHERE FirstName = 'Ali'; [CORRECT] ismi Ali bo'lgan barcha talaba ma'lumotlarini [ ] jadvaldagi barcha ma'lumotlarni [ ] ismi Ali bo'lgan talabaning faqat ismini [ ] To'g'ri javob yo'q
+Question 88: Ushbu Sql so'rov qanday ish bajaradi: ALTER TABLE orders ADD COLUMN IF NOT EXISTS order_status VARCHAR(50); [ ] yangi qator qo'shadi [CORRECT] yangi ustun qo'shadi [ ] yangi jadval qo'shadi [ ] yangi baza qo'shadi

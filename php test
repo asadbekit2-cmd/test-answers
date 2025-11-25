@@ -1,0 +1,54 @@
+Question 1: PHP kod blokini boshlashning to'g'ri yo'li qanday? [ ] <script> [ ] <php> [CORRECT] <?php [ ] <code>
+Question 2: PHP da o'zgaruvchini qanday e'lon qilish mumkin? [ ] var $variable; [ ] let $variable; [ ] int $variable; [CORRECT] $variable;
+Question 3: Ushbu joyda o'zgaruvchi nomi nima? $son = 10; [ ] number [CORRECT] son [ ] sanoq [ ] $son
+Question 4: Quyidagilardan qaysi biri PHP da to‘g‘ri o‘zgaruvchi nomi hisoblanadi? [ ] $1variable [CORRECT] $_variable [ ] $variable-name [ ] $variable name
+Question 5: PHP da har bitta qator tugashida qaysi belgi bo'lishi kerak? [ ] . [CORRECT] ; [ ] & [ ] $
+Question 6: PHPda bitta qatorni qanday kommenga olinadi ? [ ] # this is a comment [CORRECT] // this is a comment [ ] -- this is a comment [ ] ### this is a comment
+Question 7: Quyidagilardan qaysi biri PHP da mantiqiy operator hisoblanadi? [CORRECT] && [ ] + [ ] - [ ] =
+Question 8: Quyidagilardan qaysi biri PHPda if ifodasi uchun to‘g‘ri sintaksis? [ ] if condition { } [CORRECT] if (condition) { } [ ] if condition: { } [ ] if (condition): { }
+Question 9: Quyidagilardan qaysi biri PHPda elseif bayonoti uchun to‘g‘ri sintaksis? [CORRECT] elseif (condition) { } [ ] elseif condition { } [ ] else (condition) { } [ ] elseif
+Question 10: PHP da massiv qanday yaratiladi? [ ] $array = (); [ ] $array = {}; [ ] $array = new Array(); [CORRECT] $array = array(); or $array = [];
+Question 11: $cars = array("Volvo", "BMW", "Toyota");Ushbu array nechta elementdan iborat? [CORRECT] 3 [ ] 5 [ ] 6 [ ] 2
+Question 12: $numbers = array(4, 6, 2, 22, 11); sort($numbers); Ushbu fubksiya ishlaganda natija qanaqa bo'ladi? [CORRECT] 2,4,6,11,22 [ ] 2,4,11,6,22 [ ] 6,2,11,4,22 [ ] To'g'ri javob yo'q
+Question 13: Quyidagilardan qaysi biri PHPda for siklining sintaksisi to‘g‘ri? [CORRECT] for (sikl boshanishi; shart; sakrash) { } [ ] for (sikl boshanishi, shart, sakrash) { } [ ] for (sikl boshanishi, shart, sakrash) [ ] for sikl boshanishi, shart, sakrash { }
+Question 14: Quyidagilardan qaysi biri PHP da while sikli uchun to‘g‘ri sintaksis? [ ] while condition { } [CORRECT] while condition { } [ ] while (condition): { } [ ] while condition: { }
+Question 15: Quyidagilardan qaysi biri PHP da do-while sikli uchun to‘g‘ri sintaksis? [CORRECT] do { } while (condition); [ ] do (condition) { } [ ] do { condition; } while; [ ] do { } while condition;
+Question 16: PHPda qanday qilib sikldan chiqish mumkin? [ ] exit [ ] stop [CORRECT] break [ ] end
+Question 17: PHP da funksiyani qanday qilib yaratish mumkin? [CORRECT] function myFunction() { } [ ] define function myFunction() { } [ ] create function myFunction() { } [ ] new function myFunction() { }
+Question 18: PHPda funktsiyani chaqirishning to'g'ri usuli qanday? [ ] call myFunction(); [CORRECT] myFunction(); [ ] function myFunction(); [ ] execute myFunction();
+Question 19: Quyidagilardan qaysi biri PHP da funksiyaga parametr o‘tkazishning to‘g‘ri usuli hisoblanadi? [ ] function myFunction $param { } [ ] function myFunction()($param) { } [CORRECT] function myFunction($param) { } [ ] function myFunction(param) { }
+Question 20: PHP da funksiyadan qiymat qaytarish uchun qaysi kalit so‘zdan foydalaniladi? [ ] break [ ] continue [CORRECT] return [ ] yield
+Question 21: PHP da HTTP POST usuli orqali yuborilgan forma ma'lumotlarini olish uchun qanday usuldan foydalanish kerak? [ ] $_REQUEST [CORRECT] $_POST [ ] $_GET [ ] $_FORM
+Question 22: Agar forma foydalanuvchi nomi maydonida "Alice" ga o'rnatilgan bo'lsa, quyidagi PHP kodining chiqishi qanday bo'ladi? [ ] username [ ] $_POST [CORRECT] Alice [ ] To'g'ri javob yo'q
+Question 23: PHP da POST metodi yordamida formadan ma'lumot yuborilganligini qanday tekshirish mumkin? [ ] if ($_REQUEST) [ ] if ($_POST) [CORRECT] if ($_SERVER['REQUEST_METHOD'] == 'POST') [ ] if ($_POST['submit'])
+Question 24: GET usuli yordamida yuborilgan email deb nomlangan input maydonidan qiymatni olishning to'g'ri yo'li qanday? [CORRECT] $_GET['email'] [ ] $_POST['email'] [ ] $_REQUEST['email'] [ ] $_FORM['email']
+Question 25: PHP da fayl yuklash maʼlumotlarini olish uchun qaysi superglobal massiv ishlatiladi? [ ] $_UPLOADS [CORRECT] $_FILES [ ] $_DOCUMENTS [ ] $_POST
+Question 26: Agar forma 12345 qiymati bilan token deb nomlangan yashirin maydon bilan yuborilsa, quyidagi PHP kodining chiqishi qanday bo'ladi? [ ] token [CORRECT] 12345 [ ] $_POST [ ] Nothing
+Question 27: Qanday qilib POST usuli yordamida hobbies[] nomli shakl maydonidan bir nechta qiymatlarni olishingiz mumkin? [ ] $_POST['hobbies[]'] [ ] $_POST['hobbies.all'] [ ] $_POST['hobbies[]'] [CORRECT] $_POST['hobbies']
+Question 28: Qaysi PHP funktsiyasi o'zgaruvchining null emasligini tekshirish uchun ishlatiladi? [CORRECT] isset() [ ] is_null() [ ] validate() [ ] header()
+Question 29: PHP da "Salom dunyo" ni chiqarish qanday bo'ladi? [CORRECT] echo "Salom dunyo"; [ ] print("Salom") [ ] cout("Salom dunyo") [ ] To'g'ri javob yo'q
+Question 30: PHP da barcha o'zgaruvchilar qaysi belgi bilan boshlanadi? [ ] & [CORRECT] $ [ ] # [ ] %
+Question 31: Get usuli yordamida yuborilgan shakldan ma'lumotni qanday olish mumkin? [CORRECT] $_GET[] [ ] $_FILES[] [ ] $_POST[] [ ] $_COOKIE[]
+Question 32: PHP da satrlar uchun bittalik tirnoq ( ' ' ) va qo'sh tirnoq ( " " ) dan foydalanishingiz mumkin: [CORRECT] Ha [ ] Yo'q [ ] A va B javoblar to'g'ri [ ] To'g'ri javob yo'q
+Question 33: $count o'zgaruvchisiga 1 qo'shishning to'g'ri yo'li qanday? [ ] $count = $count + 2; [CORRECT] $count = +1; [ ] $count --; [ ] To'g'ri javob yo'q
+Question 34: PHP da cookie faylini qanday yaratasiz? [ ] createcookie(); [CORRECT] setcookie() [ ] makeCookie() [ ] To'g'ri javob yo'q
+Question 35: PHP faylining kengaytmasi nima? [CORRECT] .php [ ] .html [ ] .css [ ] To'g'ri javob yo'q
+Question 36: PHP qaysi yili ishlab chiqilgan? [ ] 1980 [CORRECT] 1994 [ ] 1970 [ ] 2011
+Question 37: Ko'p qatorli sharhlar ____ ichida yozilishi mumkin [ ] A. // and // [ ] A. ## and ## [CORRECT] /* and */ [ ] A. /// and ///
+Question 38: PHP da qaysi oʻzgaruvchi nomi xato yozilgan? [ ] age [ ] Age [ ] _age [CORRECT] 1age
+Question 39: PHP da chiqarish funksiyasi bu ? [ ] print [CORRECT] echo [ ] console.log [ ] To'g'ri javob yo'q
+Question 40: PHP da nechta sikl bor? [ ] 3 [CORRECT] 4 [ ] 5 [ ] 6
+Question 41: PHP da ikkita satrni qanday qilib birlashtirish mumkin? [ ] $str1 + $str2 [ ] concat($str1, $str2) [CORRECT] $str1 . $str2 [ ] strcat($str1, $str2)
+Question 42: PHP da o'zgaruvchining ma'lum bir qiymatga tengligini qanday tekshirish mumkin? [ ] if ($var = "value") [ ] if ($var == "value") [ ] if ($var === "value") [CORRECT] b) va c)
+Question 43: PHP da o'zgaruvchini belgilashda qanday belgidan foydalaniladi? [ ] @ [ ] # [CORRECT] $ [ ] %
+Question 44: PHP da shartni ifodalashda "va" operatori qanday ishlatiladi? [ ] OR [CORRECT] && [ ] || [ ] To'g'ri javob yo'q
+Question 45: PHP da shartni ifodalashda "yoki" operatori qanday ishlatiladi? [ ] YOKI [CORRECT] OR [ ] AND [ ] VA
+Question 46: PHP da assotsiativ array qanday e'lon qilinadi? [ ] $array = (); [CORRECT] $arr = array("key" => "value"); [ ] $array = new Array(); [ ] To'g'ri javob yo'q
+Question 47: PHP da arrayning oxiriga element qo'shish uchun qaysi funksiya ishlatiladi? [ ] array_add($arr, $value); [CORRECT] array_push($arr, $value); [ ] add_to_array($arr, $value); [ ] To'g'ri javob yo'q
+Question 48: Quyidagi PHP kodining natijasi qanday bo'ladi, agar forma username maydoni bilan "Ali" qiymatiga ega bo'lib yuborilgan bo'lsa? [ ] username [CORRECT] Ali [ ] Hech narsa [ ] To'g'ri javob yo'q
+Question 49: Formani POST usuli orqali yuborilganligini qanday tekshirish mumkin? [ ] if ($_REQUEST) [ ] if ($_POST) [CORRECT] if ($_SERVER['REQUEST_METHOD'] == 'POST') [ ] if ($_POST['submit'])
+Question 50: GET usuli orqali yuborilgan form ma'lumotlarini qanday olish mumkin? [CORRECT] $_GET['email'] [ ] $_POST['email'] [ ] $_REQUEST['email'] [ ] $_FORM['email']
+Question 51: PHP da fayl yuklash uchun form tagining qaysi atributi zarur? [ ] action [ ] method [CORRECT] enctype [ ] target
+Question 52: PHP da fayl yuklash uchun qaysi enctype qiymati ishlatiladi? [ ] application/x-www-form-urlencoded [ ] text/plain [CORRECT] multipart/form-data [ ] application
+Question 53: HTML formaning action atributining vazifasi nima? [CORRECT] Ma'lumotlar qaysi faylga jo'natishni aniqlaydi [ ] Ma'lumotlarni jo'natish usulini aniqlaydi [ ] Bunaqa atribut yo'q [ ] To'g'ri javob yo'q
+Question 54: PHP da array elementlarini saralash uchun qaysi funksiya ishlatiladi? [CORRECT] sort() [ ] order() [ ] arrange() [ ] header()
