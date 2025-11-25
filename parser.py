@@ -9,42 +9,55 @@ def parse_test_file(filename, title, description):
         with open(filename, 'r', encoding='utf-8') as f:
             content = f.read()
             
-        # Split by "Question X:" pattern
-        # The regex looks for "Question \d+:" and captures everything until the next one or end of file
-        raw_questions = re.split(r'Question \d+:', content)
+        # Split by lines to process each question
+        lines = content.strip().split('\n')
         
-        # Remove the first empty element if it exists
-        if raw_questions and not raw_questions[0].strip():
-            raw_questions.pop(0)
-            
-        for i, raw_q in enumerate(raw_questions):
-            if not raw_q.strip():
+        for line in lines:
+            if not line.strip() or not line.startswith('Question'):
                 continue
-                
-            # Extract question text and options
-            # The format is: Question Text [ ] Option 1 [CORRECT] Option 2 ...
             
-            # Find all options marked with [ ] or [CORRECT]
-            # We'll split by the option markers
-            parts = re.split(r'\[(.*?)\]', raw_q)
+            # Remove "Question X: " prefix
+            question_match = re.match(r'Question \d+:\s*(.+)', line)
+            if not question_match:
+                continue
             
+            rest_of_line = question_match.group(1)
+            
+            # Split by option markers: [ ] or [CORRECT]
+            # Use lookahead/lookbehind to keep the markers
+            # Match [ ] with space or [CORRECT] but not [] without space
+            parts = re.split(r'(\[\s+\]|\[CORRECT\])', rest_of_line)
+            
+            # First part is the question text
             question_text = parts[0].strip()
+            
             options = []
             correct_answer = 0
             
-            # parts[1] is marker, parts[2] is option text, parts[3] is marker, parts[4] is option text...
-            current_option_index = 0
-            for j in range(1, len(parts), 2):
-                marker = parts[j].strip()
-                option_text = parts[j+1].strip()
+            # Process remaining parts (markers and option texts)
+            i = 1
+            while i < len(parts):
+                if i >= len(parts):
+                    break
+                    
+                marker = parts[i].strip()
                 
-                if option_text:
-                    options.append(option_text)
-                    if marker == 'CORRECT':
-                        correct_answer = current_option_index
-                    current_option_index += 1
+                # Get the option text (next part)
+                if i + 1 < len(parts):
+                    option_text = parts[i + 1].strip()
+                    
+                    # If there's more content, we need to stop at the next marker
+                    # Look for the next marker position
+                    if option_text:
+                        options.append(option_text)
+                        
+                        # Check if this was the correct answer
+                        if marker == '[CORRECT]':
+                            correct_answer = len(options) - 1
+                
+                i += 2
             
-            if options:
+            if options and len(options) >= 2:
                 questions.append({
                     "type": "multiple-choice",
                     "question": question_text,
@@ -63,6 +76,8 @@ def parse_test_file(filename, title, description):
         
     except Exception as e:
         print(f"Error parsing {filename}: {e}")
+        import traceback
+        traceback.print_exc()
         return None
 
 # Define files to parse
@@ -79,11 +94,13 @@ for file_path, title, desc in files:
         test_data = parse_test_file(file_path, title, desc)
         if test_data:
             all_tests.append(test_data)
+            print(f"Parsed {title}: {len(test_data['questions'])} questions")
 
 # Write to tests.js
-js_content = f"const PRELOADED_TESTS = {json.dumps(all_tests, indent=2)};"
+js_content = f"const PRELOADED_TESTS = {json.dumps(all_tests, indent=2, ensure_ascii=False)};"
 
 with open('/home/asadbek/Desktop/test answers/tests.js', 'w', encoding='utf-8') as f:
     f.write(js_content)
 
-print(f"Successfully generated tests.js with {len(all_tests)} tests")
+print(f"\nSuccessfully generated tests.js with {len(all_tests)} tests")
+print(f"Total questions: {sum(len(t['questions']) for t in all_tests)}")

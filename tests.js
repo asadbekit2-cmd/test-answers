@@ -39,7 +39,7 @@ const PRELOADED_TESTS = [
       },
       {
         "type": "multiple-choice",
-        "question": "Quyidagilardan qaysi biri PHP da to\u2018g\u2018ri o\u2018zgaruvchi nomi hisoblanadi?",
+        "question": "Quyidagilardan qaysi biri PHP da to‘g‘ri o‘zgaruvchi nomi hisoblanadi?",
         "options": [
           "$1variable",
           "$_variable",
@@ -83,7 +83,7 @@ const PRELOADED_TESTS = [
       },
       {
         "type": "multiple-choice",
-        "question": "Quyidagilardan qaysi biri PHPda if ifodasi uchun to\u2018g\u2018ri sintaksis?",
+        "question": "Quyidagilardan qaysi biri PHPda if ifodasi uchun to‘g‘ri sintaksis?",
         "options": [
           "if condition { }",
           "if (condition) { }",
@@ -94,7 +94,7 @@ const PRELOADED_TESTS = [
       },
       {
         "type": "multiple-choice",
-        "question": "Quyidagilardan qaysi biri PHPda elseif bayonoti uchun to\u2018g\u2018ri sintaksis?",
+        "question": "Quyidagilardan qaysi biri PHPda elseif bayonoti uchun to‘g‘ri sintaksis?",
         "options": [
           "elseif (condition) { }",
           "elseif condition { }",
@@ -110,8 +110,7 @@ const PRELOADED_TESTS = [
           "$array = ();",
           "$array = {};",
           "$array = new Array();",
-          "$array = array(); or $array =",
-          ";"
+          "$array = array(); or $array = [];"
         ],
         "correctAnswer": 3
       },
@@ -139,7 +138,7 @@ const PRELOADED_TESTS = [
       },
       {
         "type": "multiple-choice",
-        "question": "Quyidagilardan qaysi biri PHPda for siklining sintaksisi to\u2018g\u2018ri?",
+        "question": "Quyidagilardan qaysi biri PHPda for siklining sintaksisi to‘g‘ri?",
         "options": [
           "for (sikl boshanishi; shart; sakrash) { }",
           "for (sikl boshanishi, shart, sakrash) { }",
@@ -150,7 +149,7 @@ const PRELOADED_TESTS = [
       },
       {
         "type": "multiple-choice",
-        "question": "Quyidagilardan qaysi biri PHP da while sikli uchun to\u2018g\u2018ri sintaksis?",
+        "question": "Quyidagilardan qaysi biri PHP da while sikli uchun to‘g‘ri sintaksis?",
         "options": [
           "while condition { }",
           "while condition { }",
@@ -161,7 +160,7 @@ const PRELOADED_TESTS = [
       },
       {
         "type": "multiple-choice",
-        "question": "Quyidagilardan qaysi biri PHP da do-while sikli uchun to\u2018g\u2018ri sintaksis?",
+        "question": "Quyidagilardan qaysi biri PHP da do-while sikli uchun to‘g‘ri sintaksis?",
         "options": [
           "do { } while (condition);",
           "do (condition) { }",
@@ -205,7 +204,7 @@ const PRELOADED_TESTS = [
       },
       {
         "type": "multiple-choice",
-        "question": "Quyidagilardan qaysi biri PHP da funksiyaga parametr o\u2018tkazishning to\u2018g\u2018ri usuli hisoblanadi?",
+        "question": "Quyidagilardan qaysi biri PHP da funksiyaga parametr o‘tkazishning to‘g‘ri usuli hisoblanadi?",
         "options": [
           "function myFunction $param { }",
           "function myFunction()($param) { }",
@@ -216,7 +215,7 @@ const PRELOADED_TESTS = [
       },
       {
         "type": "multiple-choice",
-        "question": "PHP da funksiyadan qiymat qaytarish uchun qaysi kalit so\u2018zdan foydalaniladi?",
+        "question": "PHP da funksiyadan qiymat qaytarish uchun qaysi kalit so‘zdan foydalaniladi?",
         "options": [
           "break",
           "continue",
@@ -253,10 +252,8 @@ const PRELOADED_TESTS = [
         "options": [
           "if ($_REQUEST)",
           "if ($_POST)",
-          "if ($_SERVER",
-          "== 'POST')",
-          "if ($_POST",
-          ")"
+          "if ($_SERVER['REQUEST_METHOD'] == 'POST')",
+          "if ($_POST['submit'])"
         ],
         "correctAnswer": 2
       },
@@ -264,16 +261,16 @@ const PRELOADED_TESTS = [
         "type": "multiple-choice",
         "question": "GET usuli yordamida yuborilgan email deb nomlangan input maydonidan qiymatni olishning to'g'ri yo'li qanday?",
         "options": [
-          "$_GET",
-          "$_POST",
-          "$_REQUEST",
-          "$_FORM"
+          "$_GET['email']",
+          "$_POST['email']",
+          "$_REQUEST['email']",
+          "$_FORM['email']"
         ],
         "correctAnswer": 0
       },
       {
         "type": "multiple-choice",
-        "question": "PHP da fayl yuklash ma\u02bclumotlarini olish uchun qaysi superglobal massiv ishlatiladi?",
+        "question": "PHP da fayl yuklash maʼlumotlarini olish uchun qaysi superglobal massiv ishlatiladi?",
         "options": [
           "$_UPLOADS",
           "$_FILES",
@@ -295,17 +292,14 @@ const PRELOADED_TESTS = [
       },
       {
         "type": "multiple-choice",
-        "question": "Qanday qilib POST usuli yordamida hobbies",
+        "question": "Qanday qilib POST usuli yordamida hobbies[] nomli shakl maydonidan bir nechta qiymatlarni olishingiz mumkin?",
         "options": [
-          "nomli shakl maydonidan bir nechta qiymatlarni olishingiz mumkin?",
-          "$_POST",
-          "']",
-          "$_POST",
-          "$_POST",
-          "']",
-          "$_POST"
+          "$_POST['hobbies[]']",
+          "$_POST['hobbies.all']",
+          "$_POST['hobbies[]']",
+          "$_POST['hobbies']"
         ],
-        "correctAnswer": 6
+        "correctAnswer": 3
       },
       {
         "type": "multiple-choice",
@@ -344,10 +338,10 @@ const PRELOADED_TESTS = [
         "type": "multiple-choice",
         "question": "Get usuli yordamida yuborilgan shakldan ma'lumotni qanday olish mumkin?",
         "options": [
-          "$_GET",
-          "$_FILES",
-          "$_POST",
-          "$_COOKIE"
+          "$_GET[]",
+          "$_FILES[]",
+          "$_POST[]",
+          "$_COOKIE[]"
         ],
         "correctAnswer": 0
       },
@@ -419,7 +413,7 @@ const PRELOADED_TESTS = [
       },
       {
         "type": "multiple-choice",
-        "question": "PHP da qaysi o\u02bbzgaruvchi nomi xato yozilgan?",
+        "question": "PHP da qaysi oʻzgaruvchi nomi xato yozilgan?",
         "options": [
           "age",
           "Age",
@@ -544,10 +538,8 @@ const PRELOADED_TESTS = [
         "options": [
           "if ($_REQUEST)",
           "if ($_POST)",
-          "if ($_SERVER",
-          "== 'POST')",
-          "if ($_POST",
-          ")"
+          "if ($_SERVER['REQUEST_METHOD'] == 'POST')",
+          "if ($_POST['submit'])"
         ],
         "correctAnswer": 2
       },
@@ -555,10 +547,10 @@ const PRELOADED_TESTS = [
         "type": "multiple-choice",
         "question": "GET usuli orqali yuborilgan form ma'lumotlarini qanday olish mumkin?",
         "options": [
-          "$_GET",
-          "$_POST",
-          "$_REQUEST",
-          "$_FORM"
+          "$_GET['email']",
+          "$_POST['email']",
+          "$_REQUEST['email']",
+          "$_FORM['email']"
         ],
         "correctAnswer": 0
       },
@@ -2034,7 +2026,7 @@ const PRELOADED_TESTS = [
       },
       {
         "type": "multiple-choice",
-        "question": "_______ dizayn uchun kerak bo\u2019ladigan g\u2019oyalar maydoni yoki g\u2019oyalar doskasi. To'g'ri javobni tanlang.",
+        "question": "_______ dizayn uchun kerak bo’ladigan g’oyalar maydoni yoki g’oyalar doskasi. To'g'ri javobni tanlang.",
         "options": [
           "Moodboard",
           "Prototip",

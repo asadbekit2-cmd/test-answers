@@ -270,6 +270,31 @@ header {
   border-color: rgba(139, 92, 246, 0.3);
 }
 
+/* Make test card scrollable */
+#takeTestView .card {
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+#takeTestView .card::-webkit-scrollbar {
+  width: 8px;
+}
+
+#takeTestView .card::-webkit-scrollbar-track {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+}
+
+#takeTestView .card::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+}
+
+#takeTestView .card::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-light);
+}
+
+
 /* Grid Layouts */
 .grid {
   display: grid;
