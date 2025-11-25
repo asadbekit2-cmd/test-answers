@@ -6,17 +6,6 @@ const PRELOADED_TESTS = [
     "questions": [
       {
         "type": "multiple-choice",
-        "question": "PHP kod blokini boshlashning to'g'ri yo'li qanday?",
-        "options": [
-          "<script>",
-          "<php>",
-          "<?php",
-          "<code>"
-        ],
-        "correctAnswer": 2
-      },
-      {
-        "type": "multiple-choice",
         "question": "PHP da o'zgaruvchini qanday e'lon qilish mumkin?",
         "options": [
           "var $variable;",

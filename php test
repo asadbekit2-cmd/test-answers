@@ -1,4 +1,3 @@
-Question 1: PHP kod blokini boshlashning to'g'ri yo'li qanday? [ ] <script> [ ] <php> [CORRECT] <?php [ ] <code>
 Question 2: PHP da o'zgaruvchini qanday e'lon qilish mumkin? [ ] var $variable; [ ] let $variable; [ ] int $variable; [CORRECT] $variable;
 Question 3: Ushbu joyda o'zgaruvchi nomi nima? $son = 10; [ ] number [CORRECT] son [ ] sanoq [ ] $son
 Question 4: Quyidagilardan qaysi biri PHP da to‘g‘ri o‘zgaruvchi nomi hisoblanadi? [ ] $1variable [CORRECT] $_variable [ ] $variable-name [ ] $variable name
