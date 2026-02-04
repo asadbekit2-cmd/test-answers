@@ -1,0 +1,28 @@
+{
+  "users": {
+    "TestUser_1770223913": {
+      "id": "1",
+      "nickname": "TestUser_1770223913",
+      "created_at": "now"
+    },
+    "asada": {
+      "id": "2",
+      "nickname": "asada",
+      "created_at": "now"
+    }
+  },
+  "scores": {
+    "test-id": [
+      {
+        "nickname": "TestUser_1770223913",
+        "score": 100
+      }
+    ],
+    "ux/ui-test": [
+      {
+        "nickname": "asada",
+        "score": 100
+      }
+    ]
+  }
+}

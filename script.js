@@ -3,24 +3,73 @@ let tests = [];
 let currentTest = null;
 let currentTestId = null;
 let currentQuestions = [];
+let currentUser = null;
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
+  checkUserRegistration();
   loadTests();
-  updateDashboard();
   setupEventListeners();
 });
 
 // Event Listeners
 function setupEventListeners() {
   document.getElementById('takeTestForm').addEventListener('submit', handleSubmitTest);
+  document.getElementById('registrationForm').addEventListener('submit', handleRegistration);
+}
+
+// User Management
+function checkUserRegistration() {
+  const savedUser = localStorage.getItem('quizUser');
+  if (savedUser) {
+    currentUser = savedUser;
+    document.getElementById('userWelcome').textContent = `Welcome back, ${currentUser}!`;
+    updateDashboard(); // Update dashboard after we know who the user is
+  } else {
+    document.getElementById('registrationModal').classList.remove('hidden');
+  }
+}
+
+async function handleRegistration(e) {
+  e.preventDefault();
+  const input = document.getElementById('nicknameInput');
+  const nickname = input.value.trim();
+  const errorDiv = document.getElementById('registrationError');
+
+  if (!nickname) return;
+
+  try {
+    const response = await fetch('/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nickname })
+    });
+
+    if (response.ok) {
+      currentUser = nickname;
+      localStorage.setItem('quizUser', nickname);
+      document.getElementById('registrationModal').classList.add('hidden');
+      document.getElementById('userWelcome').textContent = `Welcome, ${currentUser}!`;
+      updateDashboard();
+    } else {
+      const data = await response.json();
+      errorDiv.textContent = data.error || 'Registration failed';
+      errorDiv.style.display = 'block';
+    }
+  } catch (error) {
+    console.error('Error registering:', error);
+    // Fallback for demo without backend
+    errorDiv.textContent = 'Could not connect to server. Please ensure server.py is running.';
+    errorDiv.style.display = 'block';
+  }
 }
 
 // View Management
 function showView(viewId) {
-  const views = ['dashboardView', 'takeTestView', 'resultsView'];
+  const views = ['dashboardView', 'takeTestView', 'resultsView', 'leaderboardView'];
   views.forEach(view => {
-    document.getElementById(view).classList.add('hidden');
+    const el = document.getElementById(view);
+    if (el) el.classList.add('hidden');
   });
   document.getElementById(viewId).classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -29,6 +78,83 @@ function showView(viewId) {
 function showDashboard() {
   showView('dashboardView');
   updateDashboard();
+}
+
+function showLeaderboard() {
+  showView('leaderboardView');
+  loadLeaderboard();
+}
+
+async function loadLeaderboard() {
+  const container = document.getElementById('leaderboardContainer');
+  container.innerHTML = '<p class="text-center">Loading leaderboard...</p>';
+
+  try {
+    const response = await fetch('/api/leaderboard');
+    if (!response.ok) throw new Error('Failed to fetch leaderboard');
+
+    const scores = await response.json();
+    renderLeaderboard(scores);
+  } catch (error) {
+    console.error('Error loading leaderboard:', error);
+    container.innerHTML = '<p class="text-center" style="color: var(--color-error)">Failed to load leaderboard. Please make sure server is running.</p>';
+  }
+}
+
+function renderLeaderboard(scores) {
+  const container = document.getElementById('leaderboardContainer');
+
+  if (Object.keys(scores).length === 0) {
+    container.innerHTML = '<p class="text-center" style="color: var(--color-text-secondary)">No scores yet. Be the first!</p>';
+    return;
+  }
+
+  let html = '';
+
+  // Sort tests by title for consistent order
+  const testIds = Object.keys(scores).sort();
+
+  testIds.forEach(testId => {
+    const test = tests.find(t => t.id === testId);
+    const title = test ? test.title : testId;
+    const testScores = scores[testId];
+
+    html += `
+      <div style="margin-bottom: var(--spacing-xl);">
+        <h3 style="margin-bottom: var(--spacing-md); border-bottom: 2px solid var(--color-border); padding-bottom: var(--spacing-sm);">
+          ${title}
+        </h3>
+        <div style="background: var(--color-surface-alt); border-radius: var(--radius-md); overflow: hidden;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: rgba(0,0,0,0.05); text-align: left;">
+                <th style="padding: 12px; width: 60px;">Rank</th>
+                <th style="padding: 12px;">Player</th>
+                <th style="padding: 12px; text-align: right;">Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${testScores.map((entry, index) => `
+                <tr style="border-top: 1px solid var(--color-border);">
+                  <td style="padding: 12px; text-align: center; font-weight: bold; color: ${index < 3 ? 'var(--color-primary)' : 'inherit'}">
+                    ${index + 1}
+                  </td>
+                  <td style="padding: 12px;">
+                    ${entry.nickname === currentUser ? '<strong>' + entry.nickname + ' (You)</strong>' : entry.nickname}
+                  </td>
+                  <td style="padding: 12px; text-align: right; font-weight: bold;">
+                    ${entry.score}%
+                  </td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
 }
 
 // Dashboard Functions
@@ -87,12 +213,38 @@ function startTest(testIndex) {
   currentTest = tests[testIndex];
 
   // Randomize and select up to 25 questions
-  const allQuestions = [...currentTest.questions];
+  // Deep clone to avoid permanently modifying the source test data with shuffled answers
+  // This ensures if we retake, we start fresh (though re-shuffling is also fine)
+  const allQuestions = JSON.parse(JSON.stringify(currentTest.questions));
+
   for (let i = allQuestions.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
   }
   currentQuestions = allQuestions.slice(0, 25);
+
+  // Randomize options for each question
+  currentQuestions.forEach(q => {
+    // Create array of indices [0, 1, 2, ...] corresponding to current options
+    const indices = q.options.map((_, i) => i);
+
+    // Shuffle indices
+    for (let i = indices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+
+    // Map options to new order
+    const newOptions = indices.map(i => q.options[i]);
+
+    // Find where the correct answer moved to
+    // q.correctAnswer is the index of the correct option in the original options array
+    // We need to find the index k in 'indices' such that indices[k] == q.correctAnswer
+    const newCorrectAnswer = indices.indexOf(q.correctAnswer);
+
+    q.options = newOptions;
+    q.correctAnswer = newCorrectAnswer;
+  });
 
   document.getElementById('testTitleDisplay').textContent = currentTest.title;
   renderTestQuestions();
@@ -152,7 +304,7 @@ function updateProgress(answeredQuestions) {
 }
 
 // Submit Test Handler
-function handleSubmitTest(e) {
+async function handleSubmitTest(e) {
   e.preventDefault();
 
   let correctAnswers = 0;
@@ -183,9 +335,27 @@ function handleSubmitTest(e) {
   const score = Math.round((correctAnswers / totalQuestions) * 100);
 
   // Update test in storage
+  // Note: we are updating the global currentTest, not the cloned questions
   tests[currentTestId].completed = true;
   tests[currentTestId].score = score;
   saveProgress();
+
+  // Submit score to backend
+  if (currentUser) {
+    try {
+      await fetch('/api/submit-score', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nickname: currentUser,
+          testId: currentTest.id,
+          score: score
+        })
+      });
+    } catch (error) {
+      console.error('Error submitting score:', error);
+    }
+  }
 
   // Show results
   showResults(score, correctAnswers, totalQuestions, results);
