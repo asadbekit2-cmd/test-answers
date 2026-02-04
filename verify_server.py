@@ -4,7 +4,7 @@ import subprocess
 import sys
 import os
 
-SERVER_URL = "http://localhost:5000"
+SERVER_URL = "https://harmonious-babka-6fa6ae.netlify.app/"
 
 def start_server():
     print("Starting server...")
