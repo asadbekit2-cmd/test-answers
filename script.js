@@ -2,6 +2,7 @@
 let tests = [];
 let currentTest = null;
 let currentTestId = null;
+let currentQuestions = [];
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
@@ -85,6 +86,14 @@ function startTest(testIndex) {
   currentTestId = testIndex;
   currentTest = tests[testIndex];
 
+  // Randomize and select up to 25 questions
+  const allQuestions = [...currentTest.questions];
+  for (let i = allQuestions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
+  }
+  currentQuestions = allQuestions.slice(0, 25);
+
   document.getElementById('testTitleDisplay').textContent = currentTest.title;
   renderTestQuestions();
   updateProgress(0);
@@ -94,7 +103,7 @@ function startTest(testIndex) {
 function renderTestQuestions() {
   const container = document.getElementById('testQuestionsContainer');
 
-  container.innerHTML = currentTest.questions.map((q, index) => `
+  container.innerHTML = currentQuestions.map((q, index) => `
     <div class="question-item">
       <div class="question-header">
         <span class="question-number">Question ${index + 1}</span>
@@ -123,7 +132,7 @@ function renderTestQuestions() {
 }
 
 function updateProgressFromAnswers() {
-  const totalQuestions = currentTest.questions.length;
+  const totalQuestions = currentQuestions.length;
   let answeredQuestions = 0;
 
   for (let i = 0; i < totalQuestions; i++) {
@@ -135,7 +144,7 @@ function updateProgressFromAnswers() {
 }
 
 function updateProgress(answeredQuestions) {
-  const totalQuestions = currentTest.questions.length;
+  const totalQuestions = currentQuestions.length;
   const percentage = (answeredQuestions / totalQuestions) * 100;
 
   document.getElementById('progressFill').style.width = percentage + '%';
@@ -149,7 +158,7 @@ function handleSubmitTest(e) {
   let correctAnswers = 0;
   const results = [];
 
-  currentTest.questions.forEach((question, index) => {
+  currentQuestions.forEach((question, index) => {
     let userAnswer = null;
     let isCorrect = false;
 
@@ -170,7 +179,8 @@ function handleSubmitTest(e) {
     });
   });
 
-  const score = Math.round((correctAnswers / currentTest.questions.length) * 100);
+  const totalQuestions = currentQuestions.length;
+  const score = Math.round((correctAnswers / totalQuestions) * 100);
 
   // Update test in storage
   tests[currentTestId].completed = true;
@@ -178,7 +188,7 @@ function handleSubmitTest(e) {
   saveProgress();
 
   // Show results
-  showResults(score, correctAnswers, currentTest.questions.length, results);
+  showResults(score, correctAnswers, totalQuestions, results);
 }
 
 // Show Results
@@ -192,7 +202,21 @@ function showResults(score, correct, total, results) {
   else message = '💪 Keep Practicing!';
 
   document.getElementById('resultMessage').textContent = message;
-  document.getElementById('resultSummary').textContent = `You got ${correct} out of ${total} questions correct.`;
+
+  const mistakes = total - correct;
+  document.getElementById('resultSummary').innerHTML = `
+    <div style="display: flex; gap: 2rem; justify-content: center; margin-bottom: 1rem;">
+      <div style="color: var(--color-success); font-weight: 600;">
+        ✅ Correct: ${correct}
+      </div>
+      <div style="color: var(--color-error); font-weight: 600;">
+        ❌ Mistakes: ${mistakes}
+      </div>
+    </div>
+    <div style="font-size: 0.9em; opacity: 0.8;">
+      Total Questions: ${total}
+    </div>
+  `;
 
   const detailsContainer = document.getElementById('resultDetails');
   detailsContainer.innerHTML = results.map((result, index) => `
